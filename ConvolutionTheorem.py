@@ -193,7 +193,7 @@ class domain_FvsT():
 # %%
 
 fs = 44100
-time = 5
+time = 3
 scale = 2
 mypath = ''
 
@@ -216,19 +216,23 @@ C.play(recording)
 
 # fut: function under test
 
-# fut = C.delta3
+fut = C.delta3
 # fut = C.diracfunc
 # fut = C.gaussWave
 # fut = C.gausswave3
-fut = C.sinc_abs
+# fut = C.sinc_abs
 
-convolution_array = C.Convolution(fut)
+
+
+plotfunc = C.funct(fut, time/2)
+plt.plot(plotfunc)
 
 
 # %%
 
-plotfunc = C.funct(fut, time/2)
-plt.plot(plotfunc)
+# PAINFULLY slow
+
+convolution_array = C.Convolution(fut)
 
 
 # %%
@@ -238,6 +242,7 @@ C.play(convolution_array)
 
 # %%
 
+# FFT fast!
 
 fftconvolv = C.FFT_Convolv(C.FFT(recording)[0], C.FFT(C.funct(fut, time/2))[0])
 
