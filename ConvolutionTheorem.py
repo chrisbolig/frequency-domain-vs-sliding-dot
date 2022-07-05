@@ -218,7 +218,7 @@ C.play(recording)
 
 fut = C.delta3
 # fut = C.diracfunc
-# fut = C.gaussWave
+# fut = C.gausswave
 # fut = C.gausswave3
 # fut = C.sinc_abs
 
