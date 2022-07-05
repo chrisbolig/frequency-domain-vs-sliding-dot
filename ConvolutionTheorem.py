@@ -195,7 +195,7 @@ class domain_FvsT():
 fs = 44100
 time = 5
 scale = 2
-mypath = '/Users/cbolig/Documents/spyder/fun math projects/soundfiles/'
+mypath = ''
 
 C = domain_FvsT(fs, time, scale, mypath)
 
